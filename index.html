@@ -14,7 +14,13 @@
     <!-- /css -->
 </head>
 
-<body>
+<body class="bg-primary">
+    <div id="app">
+        <h1 class="text-center mb-5">To Do List</h1>
+        <ul class="list-group row align-items-center">
+            <li v-for="(todo, index) in todos" class="list-group-item col-7"> {{ todos[index].text }} </li>
+        </ul>
+    </div>
     <!-- vue js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- /vue js -->
