@@ -21,21 +21,24 @@
     <div id="app" v-cloak>
         <div class="container">
             <!-- Titolo -->
-            <h1 class="text-center mb-5 mt-3">To Do List</h1>
+            <h1 class="text-center mb-5 mt-3 text-uppercase">To Do List</h1>
             <!-- aggiunta todo -->
             <div class="row justify-content-center">
                 <div class="mb-4 col-7 p-0">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Aggiungi todo"
-                            aria-label="Recipient's username" aria-describedby="button-addon2" v-model="inputText"
-                            @keydown.enter="addTodo">
+                        <input type="text" class="form-control" placeholder="Add todo" aria-label="Recipient's username"
+                            aria-describedby="button-addon2" v-model="inputText" @keydown.enter="addTodo">
                         <!-- bottone di add  -->
                         <button class="btn btn-success" type="button" id="button-addon2" @click="addTodo">Add</button>
                     </div>
                 </div>
+                <!-- messaggio quando non ci sono todo  -->
+                <div class="alert alert-warning col-7 text-center" role="alert" v-if="todos.length < 1">
+                    No todo available. Please add a todo.
+                </div>
             </div>
             <!-- lista dei todo -->
-            <ul class="list-group row align-items-center">
+            <ul class="list-group row align-items-center" v-else>
                 <li v-for="(todo, index) in todos"
                     class="list-group-item col-7 d-flex justify-content-between align-items-center"
                     :class="todo.done === true ? 'text-decoration-line-through' : '' ">

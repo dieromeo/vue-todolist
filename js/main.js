@@ -6,10 +6,10 @@ createApp({
     data() {
         return {
             todos: [
-                { text: 'primo todo', done: false },
-                { text: 'secondo todo', done: true },
-                { text: 'terzo todo', done: false },
-                { text: 'quarto todo', done: false },
+                { text: 'Feed the cats', done: false },
+                { text: 'Reading books', done: true },
+                { text: 'Holidays planning', done: false },
+                { text: 'Call Mario', done: false },
             ],
 
             inputText: '',
