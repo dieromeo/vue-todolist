@@ -17,3 +17,11 @@ Dispongo una `x` accanto ad ogni li, al cui click si scatenerà una funzione che
 Creo un campo testuale con un bottone, al cui click si scatenerà una funzione, che tramite un push aggiungerà all'array un nuovo oggetto che avrà:
 - come testo il valore del campo imput, preso tramite `v-model`
 - come valore done di base false
+
+#### BONUS 1
+
+Inserisco la funzione per aggiungere todo anche all'interno di un evento con `keyup.enter`;
+
+#### BONUS 2
+
+Aggiungo un evento al li del todo, al cui click si scatenerà una funzione che andrà a cambiare lo stato di done
