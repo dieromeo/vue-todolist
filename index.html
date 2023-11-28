@@ -9,18 +9,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- /bootstrap -->
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- /font awesome -->
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- /css -->
 </head>
 
 <body class="bg-primary">
-    <div id="app">
-        <h1 class="text-center mb-5">To Do List</h1>
-        <ul class="list-group row align-items-center">
-            <li v-for="(todo) in todos" class="list-group-item col-7"
-                :class="todo.done === true ? 'text-decoration-line-through' : '' "> {{ todo.text }} </li>
-        </ul>
+    <div id="app" v-cloak>
+        <div class="container">
+            <!-- Titolo -->
+            <h1 class="text-center mb-5">To Do List</h1>
+            <!-- lista dei todo -->
+            <ul class="list-group row align-items-center">
+                <li v-for="(todo, index) in todos"
+                    class="list-group-item col-7 d-flex justify-content-between align-items-center"
+                    :class="todo.done === true ? 'text-decoration-line-through' : '' "> {{ todo.text }}
+                    <div><i class="fa-solid fa-circle-xmark" role="button" @click="removeTodo(index)"></i></div>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- vue js -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
