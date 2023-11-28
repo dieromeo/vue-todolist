@@ -27,7 +27,8 @@
                 <div class="mb-4 col-7 p-0">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Aggiungi todo"
-                            aria-label="Recipient's username" aria-describedby="button-addon2" v-model="inputText">
+                            aria-label="Recipient's username" aria-describedby="button-addon2" v-model="inputText"
+                            @keydown.enter="addTodo">
                         <button class="btn btn-success" type="button" id="button-addon2" @click="addTodo">Add</button>
                     </div>
                 </div>
